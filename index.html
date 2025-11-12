@@ -2,35 +2,120 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- 独自のCSSファイルを読み込み -->
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    
-    <div class="Dashboard-container">
-      <aside class="side-bar">
-       <header>
-        <a href="#" data-tab="home"><span class="ri-home-line">Home</span></a>
-       </header>
-       <div class="home-link"></div>
-      </aside>
-      <main>
-        <section id="home">
-          <header class="main-header">
-            <div class="profile-icon"><span class="ri-user-smile-line"></span></div>
-            <div class="profile-title">Welcome to Your Personal Dashboard</div>
-            <div class="profile-sub-title">Make your daily life more convenient and enjoyable</div>
-          </header>
-          <div class="message">
-            <p class="maessage-paragraph">This dashboard is a tool to enrich your daily life. You can easily use essential features such as diary entries, memo management, and checking weather information.</p>
-            <p class="maessage-paragraph">Small daily records become irreplaceable memories, and efficient task management leads to fulfilling days. Please use this as a partner that supports your everyday life.</p>
-          </div>
 
+  <body>
+    <div class="dashboard-container">
+      <!-- 左サイドバー (固定) -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="#" class="sidebar-home" data-tab="home">
+            <span class="ri-home-line"></span>
+            <span>Home</span>
+          </a>
+        </div>
+
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu-item tab-item" data-tab="converter">
+            <span class="ri-scales-3-line"></span>
+            <span>Unit Converter</span>
+          </li>
+          <!-- メニュー項目にFlashcardsを追加してください -->
+          <li class="sidebar-menu-item tab-item" data-tab="flashcards">
+            <span class="ri-book-line"></span>
+            <span>Flashcards</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- 右メインコンテンツ (スクロール可) -->
+      <main class="main-content">
+        <!-- ホームセクション -->
+        <section class="content-section" id="home">
+          <header class="section-header">
+            <div class="profile-circle">
+              <span class="ri-user-smile-line"></span>
+            </div>
+            <h1 class="section-title">Welcome to Your Personal Dashboard</h1>
+            <p class="section-subtitle">
+              Make your daily life more convenient and enjoyable
+            </p>
+          </header>
+          <div class="section-body">
+            <div class="section-description">
+              <p>
+                This dashboard is a tool to enrich your daily life. You can
+                easily use essential features such as diary entries, memo
+                management, and checking weather information.
+              </p>
+              <p>
+                Small daily records become irreplaceable memories, and efficient
+                task management leads to fulfilling days. Please use this as a
+                partner that supports your everyday life.
+              </p>
+            </div>
+          </div>
         </section>
+        <!-- End ホームセクション -->
+
+        <!-- 単位変換セクション -->
+        <section class="content-section hidden" id="converter">
+          <header class="section-header">
+            <h1 class="section-title">Length Unit Conversion</h1>
+          </header>
+          <div class="section-body">
+            <div class="converter-card">
+              <form class="converter-form">
+                <div class="form-group">
+                  <label class="form-label">Length Unit Conversion</label>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Value</label>
+                  <input
+                    type="number"
+                    class="form-input converter-input"
+                    value="1000"
+                    step="any"
+                  />
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">From</label>
+                    <select class="form-input converter-from"></select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">To</label>
+                    <select class="form-input converter-to"></select>
+                  </div>
+                </div>
+                <div class="converter-result-container">
+                  <div class="converter-result"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!-- End 単位変換セクション -->
+        <!-- 暗記カードセクション -->
+        <section class="content-section hidden" id="flashcards">
+          <header class="section-header">
+            <h1 class="section-title">Flashcards</h1>
+          </header>
+          <div class="section-body">
+            <!-- 暗記カードのコンテンツを追加してください -->
+            <p>ここに暗記カード機能を表示します。</p>
+          </div>
+        </section>
+        <!-- End 暗記カードセクション -->
       </main>
     </div>
-   
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
