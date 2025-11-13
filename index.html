@@ -27,7 +27,6 @@
             <span class="ri-scales-3-line"></span>
             <span>Unit Converter</span>
           </li>
-          <!-- メニュー項目にFlashcardsを追加してください -->
           <li class="sidebar-menu-item tab-item" data-tab="flashcards">
             <span class="ri-book-line"></span>
             <span>Flashcards</span>
@@ -109,13 +108,75 @@
             <h1 class="section-title">Flashcards</h1>
           </header>
           <div class="section-body">
-            <!-- 暗記カードのコンテンツを追加してください -->
-            <p>ここに暗記カード機能を表示します。</p>
+            <!-- 暗記カード追加ボタンを作成してください -->
+            <div class="add-word-container">
+              <button
+                class="add-word"
+                type="button"
+                aria-controls="word-modal"
+                aria-expanded="false"
+              >
+                <span class="ri-add-line" aria-hidden="true"></span>
+                Add New Card
+              </button>
+
+              <!-- 暗記カード追加のモーダルを作成してください -->
+              <div
+                id="word-modal"
+                class="modal hidden"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="word-modal-title"
+              >
+                <div class="modal-content">
+                  <h2 id="word-modal-title" class="modal-title">
+                    Add New Card
+                  </h2>
+
+                  <form id="word-form" class="modal-form">
+                    <!-- Front (Word) -->
+                    <div class="form-group">
+                      <label class="form-label" for="word-input"
+                        >Front (Word)</label
+                      >
+                      <input
+                        type="text"
+                        id="word-input"
+                        class="form-input"
+                        required
+                      />
+                    </div>
+
+                    <!-- Back (Meaning) -->
+                    <div class="form-group">
+                      <label class="form-label" for="meaning-input"
+                        >Back (Meaning)</label
+                      >
+                      <textarea
+                        id="meaning-input"
+                        class="form-input"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="modal-actions">
+                      <button type="button" class="cancel-word">Cancel</button>
+                      <button type="submit" class="save-word">Save</button>
+                    </div>
+                  </form>
+                </div>
+                <!--//<div class="modal-content"></div>-->
+              </div>
+              <!--"modal hidden"-->
+            </div>
+            <!--"add-word-container"-->
+            <!-- カードリスト -->
+            <div class="flashcards-list" id="flashcards-list"></div>
           </div>
+          <!--"section-body"-->
         </section>
         <!-- End 暗記カードセクション -->
       </main>
     </div>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

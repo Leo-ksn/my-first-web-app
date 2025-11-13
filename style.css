@@ -72,7 +72,6 @@ ul {
   background-color: #d9e7f3;
 }
 
-
 /* メインコンテンツ */
 .main-content {
   flex: 1;
@@ -179,9 +178,187 @@ ul {
   color: #4f7cac;
 }
 
-/* 暗記カードセクションのスタイルを以下に記載してください */
+/* 暗記カードセクション */
+.flashcards-list {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 1fr;
+  padding: 16px;
+}
+@media (min-width: 768px) {
+  .flashcards-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .flashcards-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.flashcard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+.flashcard-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+.flashcard-title {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+.flashcard-icons {
+  display: flex;
+  gap: 8px;
+  border: 0 solid;
+}
+.flashcard-meaning {
+  color: #6b7280;
+}
+
+.flashcard-meaning:hover {
+  color: #007bff;
+}
+.flashcard-edit {
+  color: #007bff;
+}
+
+.flashcard-edit:hover {
+  color: rgba(0, 123, 255, 0.8);
+}
+.flashcard-delete {
+  color: #dc2626;
+}
+
+.flashcard-delete:hover {
+  color: rgba(220, 38, 38, 0.8);
+}
+.flashcard-toggle {
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.flashcard-icons button {
+  border: 0 solid;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.flashcard-icons button span {
+  font-size: 1.125rem;
+}
+/* 暗記カードセクションのモーダルや追加ボタンなどのスタイルを以下に記載してください */
 
 /* .hidden クラス */
 .hidden {
   display: none;
+}
+
+.add-word-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.add-word {
+  padding: 8px 16px;
+  background-color: #4f7cac;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0 solid;
+}
+
+.add-word:hover {
+  background-color: #3e6690;
+  transform: translateY(-2px);
+}
+
+.add-word:active {
+  transform: translateY(0);
+}
+
+/* モーダル */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: 448px;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #2f2f2f;
+}
+
+.modal-form .form-group {
+  margin-bottom: 16px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.cancel-word {
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  color: #757575;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cancel-word:hover {
+  background-color: #cfcfcf;
+}
+
+.save-word {
+  padding: 8px 16px;
+  background-color: #4f7cac;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.save-word:hover {
+  background-color: #3e6690;
 }
